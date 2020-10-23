@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+class Assignment1 {
+  public static void main(String[] args) {
+    Scanner scan = new Scanner(System.in);
+    System.out.println("Please enter the movie name");
+    String movie = scan.nextLine();
+    System.out.println("Please enter the running time in minutes.");
+    int minutes = scan.nextInt();
+    System.out.println("Please enter ratings from the movie review website.");
+    int rating1 = scan.nextInt();
+    int rating2 = scan.nextInt();
+    int rating3 = scan.nextInt();
+    System.out.println("Please enter ratings from the focus group.");
+    double focusRating1 = scan.nextDouble();
+    double focusRating2 = scan.nextDouble();
+    System.out.println("Please enter the average movie critic rating.");
+    double movieCritic = scan.nextDouble();
+    System.out.println("Title: " + movie);
+    int hour = minutes/60;
+    int min = minutes % 60;
+    System.out.println("Running time: "+hour + "h" + min);
+    double averageRating = (double)(rating1 + rating2 + rating3) / 3;
+    System.out.println("Average website rating: " + averageRating);
+    double focusAverage = (double)(focusRating1 + focusRating2)/2;
+    System.out.println("Average focus group rating: "+ focusAverage);
+    System.out.println("Average movie critic rating: " + movieCritic);
+    double overallRating1 = .2*averageRating + .3*focusAverage + .5*movieCritic;
+    int overallMovieRating = (int)(overallRating1 + 0.5);
+    System.out.println("Overall movie rating: " + overallMovieRating);
+    
+  }
+}
