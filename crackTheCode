@@ -1,0 +1,68 @@
+import java.util.Scanner;
+
+public class Assignment3 {
+
+  public static void main (String args[]) {
+    //starting the game
+    Scanner scan = new Scanner(System.in);
+    System.out.println("Welcome. What is your name?");
+    String name = scan.nextLine();
+    System.out.println("Hello " + name +". Are you ready to crack the code?");
+    String answer = scan.nextLine();
+    String yes = "yes";
+    //level one
+    if (answer.toLowerCase().equals(yes)){
+       System.out.println("PHASE 1");
+       System.out.println("Enter a number:");
+      
+        
+       }
+    else{
+      System.exit(0);
+    }
+       
+        int ans = scan.nextInt();
+      //level 2
+      if(ans == 3){
+         System.out.println("Correct!");
+          System.out.println("PHASE 2");
+         System.out.println("Enter a number:");
+         
+         }
+      else{
+      System.out.println("Sorry, that was incorrect!");
+      System.out.println("Better luck next time!");
+      System.exit(0);
+    }
+      int ans2 = scan.nextInt();
+      //level 3
+      if (ans2 == 1 || ans2 >= 33 && ans2 <= 100){
+        System.out.println("Correct!");
+        System.out.println("PHASE 3");
+        System.out.println("Enter a number:");
+        }
+      else{
+      System.out.println("Sorry, that was incorrect!");
+      System.out.println("Better luck next time!");
+      System.exit(0);
+    }
+      int ans3 = scan.nextInt();
+      
+      if(ans3 > 0 && (ans3 % 3 == 0 || ans3 % 7 == 0))
+      {
+        System.out.println("Correct!");
+        System.out.println("You have cracked the code!");
+        }
+      else{
+      System.out.println("Sorry, that was incorrect!");
+      System.out.println("Better luck next time!");
+      System.exit(0);
+    }
+      
+        
+      
+    }
+    
+
+    }
+  
