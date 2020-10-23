@@ -1,0 +1,51 @@
+import java.util.Scanner;
+import edhesive.assignment2.Airplane;
+
+public class Assignment2
+{
+  public static void main(String[] args)
+  {
+    //first airplane
+    Airplane plane1 = new Airplane();
+    Scanner scan = new Scanner(System.in);
+    System.out.println("Enter the details of the second airplane (call-sign, distance, bearing and altitude):");
+    String callsign = scan.nextLine();
+    double dist = scan.nextDouble(); 
+    int direction = scan.nextInt();
+    int alt = scan.nextInt();
+    System.out.println("Initial Positions:");
+    System.out.println("\"Airplane 1\": " + plane1.toString());
+    callsign = callsign.toUpperCase();
+    //second airplane
+    Airplane plane2 = new Airplane(callsign, dist, direction, alt);
+    System.out.println("\"Airplane 2\": " + plane2.toString());
+     int height1 = plane1.getAlt();
+    int height2 = plane2.getAlt();
+    //calculate the height difference
+    int heightDifference = Math.abs(height1 - height2);
+    //prints out the difference in height and distance
+    System.out.println("The distance between the planes is " + plane1.distTo(plane2) + " miles.");
+    System.out.println("The difference in height between the planes is "+ heightDifference + " feet.");
+    //apply the new changes
+    plane1.gainAlt();
+    plane1.gainAlt();
+    plane1.gainAlt();
+    plane1.gainAlt();
+    plane2.loseAlt();
+    plane2.loseAlt();
+    plane1.move(10.5,50);
+    plane2.move(8.0,125);
+
+    double difference = plane1.distTo(plane2);
+    int heightDifference2 = Math.abs(plane1.getAlt() - plane2.getAlt());
+    //prints out the new coordinates 
+    System.out.println("New Positions:");
+    System.out.println("\"Airplane 1\": " + plane1.toString());
+    System.out.println("\"Airplane 2\": " + plane2.toString());
+    System.out.println("The distance between the planes is " + plane2.distTo(plane1) + " miles." );
+    System.out.println("The difference in height between the planes is "+ heightDifference2 + " feet.");
+    
+    
+    
+  }
+}
